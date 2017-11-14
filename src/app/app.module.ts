@@ -1,9 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule, JsonpModule } from '@angular/http';
+import { MomentModule } from 'angular2-moment';
 
 import { AppComponent } from './app.component';
 import { MoviesComponent } from './movies/movies.component';
 import { routing } from './app.routing';
+import { MovieService } from './services/movie.service';
 
 @NgModule({
   declarations: [
@@ -12,9 +15,12 @@ import { routing } from './app.routing';
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    HttpModule,
+    JsonpModule,
+    MomentModule
   ],
-  providers: [],
+  providers: [MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
